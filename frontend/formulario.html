@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página projeto API</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script defer src="./scripts/script.js"></script>
+</head>
+<body>
+    
+    <form id="enviarForm">
+
+        <label>Nome <span class="required">*</span></label>
+        <input type="text" name="nome" required>
+
+        <label>Data <span class="required">*</span></label>
+        <input type="text" name="data" required>
+
+        <label>Descrição <span class="required">*</span></label>
+        <input type="text" name="descricao" required>
+        
+        <label>Valor <span class="required">*</span></label>
+        <input type="number" name="valor" required>
+
+        <!-- BOTÃO -->
+        <div class="button-row">
+
+            <button type="subtmit" class="submit-btn">Enviar</button>
+            <span 
+                class="clean-text" 
+                onclick="document.getElementById('enviarForm').reset()">
+                clean form
+            </span>
+        </div> 
+            
+    </form>
+
+</body>
+</html>

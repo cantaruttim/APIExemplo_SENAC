@@ -3,6 +3,7 @@ using exemplo.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// string de conexão
 var connectionString = builder.Configuration.GetConnectionString("AppDbConnectionString");
 builder.Services.AddDbContext<AppDbContext>(
     options => options.UseMySql(
