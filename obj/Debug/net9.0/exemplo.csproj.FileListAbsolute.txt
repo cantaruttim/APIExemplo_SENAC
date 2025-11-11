@@ -105,3 +105,4 @@ C:\Users\matheus.acantarutti\Desktop\projeto WEBAPI\exemplo\obj\Debug\net9.0\ref
 C:\Users\matheus.acantarutti\Desktop\projeto WEBAPI\exemplo\obj\Debug\net9.0\exemplo.pdb
 C:\Users\matheus.acantarutti\Desktop\projeto WEBAPI\exemplo\obj\Debug\net9.0\exemplo.genruntimeconfig.cache
 C:\Users\matheus.acantarutti\Desktop\projeto WEBAPI\exemplo\obj\Debug\net9.0\ref\exemplo.dll
+C:\Users\matheus.acantarutti\Desktop\projeto WEBAPI\exemplo\obj\Debug\net9.0\exemplo.sourcelink.json
