@@ -13,14 +13,16 @@ builder.Services.AddDbContext<AppDbContext>(
 );
 
 
+// Adiciona política de CORS
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(policy =>
-    {
-        policy.AllowAnyOrigin()
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-    });
+    options.AddPolicy("AllowFrontend",
+        policy =>
+        {
+            policy.WithOrigins("http://127.0.0.1:5500", "http://localhost:5500") // origem do seu front-end
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
 });
 
 // Add services to the container.
@@ -34,7 +36,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.UseCors();
+app.UseCors("AllowFrontend");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

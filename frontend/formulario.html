@@ -12,21 +12,21 @@
     <form id="enviarForm">
 
         <label>Nome <span class="required">*</span></label>
-        <input type="text" name="nome" required>
+        <input type="text" id="nome" name="nome" required>
 
         <label>Data <span class="required">*</span></label>
-        <input type="text" name="data" required>
+        <input type="text" id="data" name="data" required>
 
         <label>Descrição <span class="required">*</span></label>
-        <input type="text" name="descricao" required>
+        <input type="text" id="descricao" name="descricao" required>
         
         <label>Valor <span class="required">*</span></label>
-        <input type="number" name="valor" required>
+        <input type="number" id="valor" name="valor" required>
 
         <!-- BOTÃO -->
         <div class="button-row">
 
-            <button type="subtmit" class="submit-btn">Enviar</button>
+            <button type="submit" class="submit-btn">Enviar</button>
             <span 
                 class="clean-text" 
                 onclick="document.getElementById('enviarForm').reset()">
