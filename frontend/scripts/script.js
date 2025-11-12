@@ -1,8 +1,7 @@
 const gastosList = document.querySelector('.gastos-list');
 const apiURL = 'http://localhost:5034/api/gastos';
 
-
-
+// CRIA O EVENTO PARA O MÉTODO POST
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("enviarForm");
 
@@ -53,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
+// CRIA O EVENTO PARA O MÉTODO GET
 const getGastosList = async () => {
     try {
         const response = await fetch(apiURL, {
