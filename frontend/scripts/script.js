@@ -76,7 +76,6 @@ const getGastosList = async () => {
             const newRow = document.createElement("tr");
 
             newRow.innerHTML = `
-
                 <td data-label="Data">${gasto.data}</td>
                 <td data-label="Nome">${gasto.nome}</td>
                 <td data-label="Descrição">${gasto.descricao}</td>
