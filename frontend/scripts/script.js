@@ -2,6 +2,7 @@ const gastosList = document.querySelector('.gastos-list');
 const apiURL = 'http://localhost:5034/api/gastos';
 
 
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("enviarForm");
 
@@ -53,19 +54,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Método Get Implementado
 const getGastosList = async () => {
     try {
-        // que vamos implementar o método GET
-        const response = await fetch(
-            apiURL,
-            {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+        const response = await fetch(apiURL, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
             }
-        );
+        });
 
         if (!response.ok) {
             throw new Error('Erro enquanto buscava lista de gastos');
@@ -74,18 +70,27 @@ const getGastosList = async () => {
         const gastos = await response.json();
         console.log('Dados vindos do backend:', gastos);
 
-        // console.log(gastos);
-        gastos.forEach( (gastos) => {
-            const newLi = document.createElement('li');
-            newLi.innerText = `Nome: ${gastos.nome} | Data: ${gastos.data} Descrição: ${gastos.descricao} | Valor R$ ${gastos.valor}`;
-            gastosList.appendChild(newLi);
-        })
+        const gastosTableBody = document.querySelector("#gastosTable tbody");
+        gastosTableBody.innerHTML = "";
 
+        gastos.forEach((gasto) => {
+            const newRow = document.createElement("tr");
+
+            newRow.innerHTML = `
+
+                <td data-label="Data">${gasto.data}</td>
+                <td data-label="Nome">${gasto.nome}</td>
+                <td data-label="Descrição">${gasto.descricao}</td>
+                <td data-label="Valor (R$)">${parseFloat(gasto.valor).toFixed(2)}</td>
+            `;
+
+            gastosTableBody.appendChild(newRow);
+        });
 
     } catch (error) {
         console.error(error.message);
     }
-}
+};
 
 getGastosList();
 createGastos();
